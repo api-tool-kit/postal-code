@@ -1,0 +1,30 @@
+<alps version="1.0">
+  <doc>
+    United States ZIP codes w/ related data
+  </doc>
+  
+  <!-- data elements -->
+  <descriptor id="Zipcode" type="semantic" text="5 digit Zipcode or military postal code(FPO/APO)" />
+  <descriptor id="ZipCodeType" type="semantic" text="Standard, PO BOX Only, Unique, Military(implies APO or FPO)" />
+  <descriptor id="City" type="semantic" text="USPS offical city name(s)" />
+  <descriptor id="State" type="semantic" text="USPS offical state, territory, or quasi-state (AA, AE, AP) abbreviation code" />
+  <descriptor id="LocationType" type="semantic" text="Primary, Acceptable,Not Acceptable" />
+  <descriptor id="Lat" type="semantic" text="Decimal Latitude, if available" />
+  <descriptor id="Long" type="semantic" text="Decimal Longitude, if available" />
+  <descriptor id="Location" type="semantic" text="Standard Display  (eg Phoenix, AZ ; Pago Pago, AS ; Melbourne, AU )" />
+  <descriptor id="Decommisioned" type="semantic" text="If Primary location, Yes implies historical Zipcode, No Implies current Zipcode; If not Primary, Yes implies Historical Placename" />
+  <descriptor id="TaxReturnsFiled" type="semantic" text="Integer	Number of Individual Tax Returns Filed in 2008" />
+  <descriptor id="EstimatedPopulation" type="semantic" text="Integer	Tax returns filed + Married filing jointly + Dependents" />
+  <descriptor id="TotalWages" type="semantic" text="Integer	Total of Wages Salaries and Tips" />
+  
+  <!-- actions-->
+  <descriptor id="search" type="safe" text="returns one or more records">
+    <descriptor href="#City" type="semantic"/>
+    <descriptor href="#State" type="semantic" />
+  </descriptor>
+
+  <descriptor id="validator" type="safe" text="returns true/false">
+    <descriptor href="#Zipcode" type="semantic"/>
+  </descriptor>
+  
+</alps>
